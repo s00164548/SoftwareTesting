@@ -27,10 +27,10 @@ namespace TestingCa2018.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Form(string gender, int age)
+        public ActionResult Form( int age, string gender)
         {
             var prem = new PremController();
-            ViewBag.Message = prem.CalcPremium(age, gender);
+            ViewBag.Message = prem.CalcPremium(age, gender.ToLower());
             return View();
         }
     }
